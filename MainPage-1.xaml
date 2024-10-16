@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CSC317F24FrontEndInClass.MainPage">
+
+    <Grid RowDefinitions="60, 70, 70, 70, 100, 70, *"
+          ColumnDefinitions="120, *" MaximumWidthRequest="700" BackgroundColor="#333333">
+        <Label Text="Fill out the information below!" Grid.ColumnSpan="2" FontSize="25" HorizontalOptions="Center" VerticalOptions="Center"/>
+        <Label Text="Name: " Grid.Row="1" HorizontalOptions="End" VerticalOptions="Center" Margin="0, 0, 15, 0"/>
+        <Label Text="Email: " Grid.Row="2"  HorizontalOptions="End" VerticalOptions="Center" Margin="0, 0, 15, 0"/>
+        <Label Text="Age: " Grid.Row="3"  HorizontalOptions="End" VerticalOptions="Center" Margin="0, 0, 15, 0"/>
+        <Label Text="Classification: " Grid.Row="4"  HorizontalOptions="End" VerticalOptions="Center" Margin="0, 0, 15, 0"/>
+        <Label Text="Start Date: " Grid.Row="5"  HorizontalOptions="End" VerticalOptions="Center" Margin="0, 0, 15, 0"/>
+
+        <Entry Placeholder="..." Grid.Row="1" Grid.Column="1" 
+               BackgroundColor="White" TextColor="Black"
+               HeightRequest="50" Margin="0, 0, 15, 0"/>
+        <Entry Placeholder="..." Grid.Row="2" Grid.Column="1" 
+        BackgroundColor="White" TextColor="Black"
+        HeightRequest="50" Margin="0, 0, 15, 0"/>
+
+        <HorizontalStackLayout Grid.Row="3" Grid.Column="1">
+            <Entry Placeholder="..." Text="{Binding Value, Mode=TwoWay}" 
+                   BindingContext="{x:Reference stpAge}"
+                   Grid.Row="2" Grid.Column="1" 
+                BackgroundColor="White" TextColor="Black"
+                HeightRequest="50" Margin="0, 0, 15, 0" WidthRequest="100"/>
+            <Stepper Value="18" Minimum="18" Maximum="125" x:Name="stpAge"/>
+        </HorizontalStackLayout>
+        <Grid RowDefinitions="*, *" ColumnDefinitions="*, *"
+       Grid.Row="4" Grid.Column="1">
+            <RadioButton Grid.Row="0" Grid.Column="0" Value="freshman" Content="Freshman"/>
+            <RadioButton Grid.Row="0" Grid.Column="1" Value="sophomore" Content="Sophomore"/>
+            <RadioButton Grid.Row="1" Grid.Column="0" Value="junior" Content="Junior"/>
+            <RadioButton Grid.Row="1" Grid.Column="1" Value="senior" Content="Senior"/>
+        </Grid>
+        <DatePicker Grid.Row="5" Grid.Column="1"/>
+        <Button Text="Submit" Grid.Row="6" Grid.ColumnSpan="2"
+                HeightRequest="40" WidthRequest="150"/>
+
+
+    </Grid>
+
+</ContentPage>
