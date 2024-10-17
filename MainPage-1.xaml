@@ -297,6 +297,17 @@
         </Entry>
 
 
+        <Image Source="dotnet_bot.png">
+            <Image.Triggers>
+                <DataTrigger TargetType="Image"
+                             Binding="{Binding Source={x:Reference styleSwitch}, Path=IsToggled}"
+                             Value="true">
+                    <Setter Property="Source" Value="usm_eagle.png" />
+                    <Setter Property="Scale" Value="0.9" />
+                </DataTrigger>
+            </Image.Triggers>
+        </Image>
+
     </Grid>
 
 </ContentPage>
