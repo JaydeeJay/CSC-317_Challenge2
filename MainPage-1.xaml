@@ -5,38 +5,296 @@
 
     <Grid RowDefinitions="60, 70, 70, 70, 100, 70, *"
           ColumnDefinitions="120, *" MaximumWidthRequest="700" BackgroundColor="#333333">
-        <Label Text="Fill out the information below!" Grid.ColumnSpan="2" FontSize="25" HorizontalOptions="Center" VerticalOptions="Center"/>
-        <Label Text="Name: " Grid.Row="1" HorizontalOptions="End" VerticalOptions="Center" Margin="0, 0, 15, 0"/>
-        <Label Text="Email: " Grid.Row="2"  HorizontalOptions="End" VerticalOptions="Center" Margin="0, 0, 15, 0"/>
-        <Label Text="Age: " Grid.Row="3"  HorizontalOptions="End" VerticalOptions="Center" Margin="0, 0, 15, 0"/>
-        <Label Text="Classification: " Grid.Row="4"  HorizontalOptions="End" VerticalOptions="Center" Margin="0, 0, 15, 0"/>
-        <Label Text="Start Date: " Grid.Row="5"  HorizontalOptions="End" VerticalOptions="Center" Margin="0, 0, 15, 0"/>
+
+        <Grid.Triggers>
+            <DataTrigger TargetType="Grid"
+                     Binding="{Binding Source={x:Reference styleSwitch}, Path=IsToggled}"
+                     Value="true">
+                <Setter Property="BackgroundColor"
+                    Value="#ffce35" />
+            </DataTrigger>
+
+        </Grid.Triggers>
+        
+        
+        
+        
+        <Label Text="Fill out the information below!" Grid.ColumnSpan="2" FontSize="25" HorizontalOptions="Center" VerticalOptions="Center">
+            <Label.Triggers>
+            <DataTrigger TargetType="Label"
+                     Binding="{Binding Source={x:Reference styleSwitch}, Path=IsToggled}"
+                     Value="true">
+                <Setter Property="FontAttributes"
+                    Value="Bold" />
+                    <Setter Property="TextColor"
+                        Value="#333333" />
+
+            </DataTrigger>
+            </Label.Triggers>
+        </Label>
+
+        
+        <Label Text="Name: " Grid.Row="1" HorizontalOptions="End" VerticalOptions="Center" Margin="0, 0, 15, 0">
+            <Label.Triggers>
+                <DataTrigger TargetType="Label"
+                     Binding="{Binding Source={x:Reference styleSwitch}, Path=IsToggled}"
+                     Value="true">
+
+                    <Setter Property="TextColor"
+                        Value="#333333" />
+
+                </DataTrigger>
+            </Label.Triggers>
+        </Label>
+
+
+        <Label Text="Email: " Grid.Row="2"  HorizontalOptions="End" VerticalOptions="Center" Margin="0, 0, 15, 0">
+            <Label.Triggers>
+                <DataTrigger TargetType="Label"
+                     Binding="{Binding Source={x:Reference styleSwitch}, Path=IsToggled}"
+                     Value="true">
+
+                    <Setter Property="TextColor"
+                        Value="#333333" />
+
+                </DataTrigger>
+            </Label.Triggers>
+        </Label>
+        
+        <Label Text="Age: " Grid.Row="3"  HorizontalOptions="End" VerticalOptions="Center" Margin="0, 0, 15, 0">
+        <Label.Triggers>
+            <DataTrigger TargetType="Label"
+                     Binding="{Binding Source={x:Reference styleSwitch}, Path=IsToggled}"
+                     Value="true">
+
+                <Setter Property="TextColor"
+                        Value="#333333" />
+
+            </DataTrigger>
+        </Label.Triggers>
+        </Label>
+
+        <Label Text="Classification: " Grid.Row="4"  HorizontalOptions="End" VerticalOptions="Center" Margin="0, 0, 15, 0">
+            <Label.Triggers>
+                <DataTrigger TargetType="Label"
+                     Binding="{Binding Source={x:Reference styleSwitch}, Path=IsToggled}"
+                     Value="true">
+
+                    <Setter Property="TextColor"
+                        Value="#333333" />
+
+                </DataTrigger>
+            </Label.Triggers>
+        </Label>
+
+        <Label Text="Start Date: " Grid.Row="5"  HorizontalOptions="End" VerticalOptions="Center" Margin="0, 0, 15, 0">
+            <Label.Triggers>
+                <DataTrigger TargetType="Label"
+                     Binding="{Binding Source={x:Reference styleSwitch}, Path=IsToggled}"
+                     Value="true">
+
+                    <Setter Property="TextColor"
+                        Value="#333333" />
+
+                </DataTrigger>
+            </Label.Triggers>
+        </Label>
+        
+
+        <Label Text="USM Mode: " Grid.Row="6"  HorizontalOptions="End" VerticalOptions="Center" Margin="0, 0, 15, 0">
+            <Label.Triggers>
+                <DataTrigger TargetType="Label"
+                     Binding="{Binding Source={x:Reference styleSwitch}, Path=IsToggled}"
+                     Value="true">
+
+                    <Setter Property="TextColor"
+                        Value="#333333" />
+
+                </DataTrigger>
+            </Label.Triggers>
+        </Label>
+
+
 
         <Entry Placeholder="..." Grid.Row="1" Grid.Column="1" 
-               BackgroundColor="White" TextColor="Black"
-               HeightRequest="50" Margin="0, 0, 15, 0"/>
+               BackgroundColor="White" TextColor="#333333"
+               HeightRequest="50" Margin="0, 0, 15, 0">
+            <Entry.Triggers>
+                <DataTrigger TargetType="Entry"
+                     Binding="{Binding Source={x:Reference styleSwitch}, Path=IsToggled}"
+                     Value="true">
+                    <Setter Property="BackgroundColor"
+                        Value="#333333" />
+                    <Setter Property="TextColor"
+                            Value="White" />
+
+                </DataTrigger>
+            </Entry.Triggers>
+        </Entry>
+
         <Entry Placeholder="..." Grid.Row="2" Grid.Column="1" 
-        BackgroundColor="White" TextColor="Black"
-        HeightRequest="50" Margin="0, 0, 15, 0"/>
+        BackgroundColor="White" TextColor="#333333"
+        HeightRequest="50" Margin="0, 0, 15, 0">
+            <Entry.Triggers>
+                <DataTrigger TargetType="Entry"
+                     Binding="{Binding Source={x:Reference styleSwitch}, Path=IsToggled}"
+                     Value="true">
+                    <Setter Property="BackgroundColor"
+                        Value="#333333" />
+                    <Setter Property="TextColor"
+                            Value="White" />
+
+                </DataTrigger>
+            </Entry.Triggers>
+        </Entry>
+            
 
         <HorizontalStackLayout Grid.Row="3" Grid.Column="1">
             <Entry Placeholder="..." Text="{Binding Value, Mode=TwoWay}" 
                    BindingContext="{x:Reference stpAge}"
                    Grid.Row="2" Grid.Column="1" 
-                BackgroundColor="White" TextColor="Black"
-                HeightRequest="50" Margin="0, 0, 15, 0" WidthRequest="100"/>
-            <Stepper Value="18" Minimum="18" Maximum="125" x:Name="stpAge"/>
+                BackgroundColor="White" TextColor="#333333"
+                HeightRequest="50" Margin="0, 0, 15, 0" WidthRequest="100">
+                <Entry.Triggers>
+                    <DataTrigger TargetType="Entry"
+                     Binding="{Binding Source={x:Reference styleSwitch}, Path=IsToggled}"
+                     Value="true">
+                        <Setter Property="BackgroundColor"
+                        Value="#333333" />
+                        <Setter Property="TextColor"
+                            Value="White" />
+
+                    </DataTrigger>
+                </Entry.Triggers>
+            </Entry>
+
+            <Stepper Value="18" Minimum="18" Maximum="125" x:Name="stpAge">
+                <Stepper.Triggers>
+                    <DataTrigger TargetType="Stepper"
+                     Binding="{Binding Source={x:Reference styleSwitch}, Path=IsToggled}"
+                     Value="true">
+                        <Setter Property="BackgroundColor"
+                        Value="#333333" />
+
+                    </DataTrigger>
+                </Stepper.Triggers>
+            </Stepper>
+
         </HorizontalStackLayout>
         <Grid RowDefinitions="*, *" ColumnDefinitions="*, *"
        Grid.Row="4" Grid.Column="1">
-            <RadioButton Grid.Row="0" Grid.Column="0" Value="freshman" Content="Freshman"/>
-            <RadioButton Grid.Row="0" Grid.Column="1" Value="sophomore" Content="Sophomore"/>
-            <RadioButton Grid.Row="1" Grid.Column="0" Value="junior" Content="Junior"/>
-            <RadioButton Grid.Row="1" Grid.Column="1" Value="senior" Content="Senior"/>
+            <RadioButton Grid.Row="0" Grid.Column="0" Value="freshman" Content="Freshman">
+                <RadioButton.Triggers>
+                    <DataTrigger TargetType="RadioButton"
+                     Binding="{Binding Source={x:Reference styleSwitch}, Path=IsToggled}"
+                     Value="true">
+                        <Setter Property="TextColor"
+                            Value="#3333333" />
+
+                    </DataTrigger>
+                </RadioButton.Triggers>
+                </RadioButton>
+            
+                <RadioButton Grid.Row="0" Grid.Column="1" Value="sophomore" Content="Sophomore">
+                <RadioButton.Triggers>
+                    <DataTrigger TargetType="RadioButton"
+                     Binding="{Binding Source={x:Reference styleSwitch}, Path=IsToggled}"
+                     Value="true">
+                        <Setter Property="TextColor"
+                            Value="#3333333" />
+
+                    </DataTrigger>
+                </RadioButton.Triggers>
+            </RadioButton>
+            
+            <RadioButton Grid.Row="1" Grid.Column="0" Value="junior" Content="Junior">
+                <RadioButton.Triggers>
+                    <DataTrigger TargetType="RadioButton"
+                     Binding="{Binding Source={x:Reference styleSwitch}, Path=IsToggled}"
+                     Value="true">
+                        <Setter Property="TextColor"
+                            Value="#333333" />
+
+                    </DataTrigger>
+                </RadioButton.Triggers>
+            </RadioButton>
+            
+            <RadioButton Grid.Row="1" Grid.Column="1" Value="senior" Content="Senior">
+                <RadioButton.Triggers>
+                    <DataTrigger TargetType="RadioButton"
+                     Binding="{Binding Source={x:Reference styleSwitch}, Path=IsToggled}"
+                     Value="true">
+                        <Setter Property="TextColor"
+                            Value="#333333" />
+
+                    </DataTrigger>
+                </RadioButton.Triggers>
+            </RadioButton>
+            
         </Grid>
-        <DatePicker Grid.Row="5" Grid.Column="1"/>
-        <Button Text="Submit" Grid.Row="6" Grid.ColumnSpan="2"
-                HeightRequest="40" WidthRequest="150"/>
+
+        <DatePicker Grid.Row="5" Grid.Column="1">
+            <DatePicker.Triggers>
+                <DataTrigger TargetType="DatePicker"
+                     Binding="{Binding Source={x:Reference styleSwitch}, Path=IsToggled}"
+                     Value="true">
+                    <Setter Property="TextColor"
+                            Value="White" />
+                    <Setter Property="BackgroundColor"
+                            Value="#333333" />
+
+                </DataTrigger>
+            </DatePicker.Triggers>
+            </DatePicker>
+
+        <Switch IsToggled="False" x:Name="styleSwitch" Grid.Row="6" Grid.Column="1" OnColor="White"  ThumbColor="White">
+            <Switch.Triggers>
+                <DataTrigger TargetType="Switch"
+                     Binding="{Binding Source={x:Reference styleSwitch}, Path=IsToggled}"
+                     Value="true">
+                </DataTrigger>
+            </Switch.Triggers>
+        </Switch>
+
+        <Button Text="Submit" Grid.Row="6" Grid.Column="3" Grid.ColumnSpan="2"
+                HeightRequest="40" WidthRequest="150">
+            <Button.Triggers>
+                <DataTrigger TargetType="Button"
+                     Binding="{Binding Source={x:Reference styleSwitch}, Path=IsToggled}"
+                     Value="true">
+                    <Setter Property="BackgroundColor"
+                        Value="#333333" />
+                    <Setter Property="TextColor"
+                            Value="White" />
+
+                </DataTrigger>
+            </Button.Triggers>
+            </Button>
+
+        <!--    New Entry    -->
+        <Label Text="Student ID: " Grid.Row="7" HorizontalOptions="End" VerticalOptions="Center" Margin="0, -110, 15, 0" TextColor="#333333">
+            <Label.Triggers>
+                <DataTrigger TargetType="Label"
+                             Binding="{Binding Source={x:Reference styleSwitch}, Path=IsToggled}"
+                             Value="false">
+                    <Setter Property="IsVisible" Value="False" />
+                    <Setter Property="Grid.Row" Value="7" />
+                    <Setter Property="TextColor" Value="#333333" />
+                </DataTrigger>
+            </Label.Triggers>
+        </Label>
+
+        <Entry Placeholder="Enter Student ID..." Grid.Row="7" Grid.Column="1" 
+               BackgroundColor="White" TextColor="#333333" 
+               HeightRequest="50" Margin="0, -110, 15, 0">
+            <Entry.Triggers>
+                <DataTrigger TargetType="Entry"
+                             Binding="{Binding Source={x:Reference styleSwitch}, Path=IsToggled}"
+                             Value="false">
+                    <Setter Property="IsVisible" Value="False" />
+                </DataTrigger>
+            </Entry.Triggers>
+        </Entry>
 
 
     </Grid>
